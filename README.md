@@ -1,1 +1,1 @@
-# Plataforma de distribucion de contenidos.
+# Plataforma de distribucion de contenidos Practica
