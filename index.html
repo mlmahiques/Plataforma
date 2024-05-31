@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Video HTML5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica - Plataformas - Proyecto video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        video {
+            display: block;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-	 <!-- Contenido del archivo HTML -->
-    <h1>Reproducción de Video HTML5</h1>
+    <h1>Proyecto de Vídeo</h1>
 
-    <video width="640" height="360" controls>
+    <section>
+        <h2>Tarea 1.1</h2>
+        <p>
+            Elige un clip de vídeo de máximo 20 segundos (puedes crearlo con tu dispositivo móvil, que tenga objetos en detalle y en movimiento) y codifícalo con Avidemux eligiendo el formato y resolución que creas adecuadas para su publicación en web. Teniendo en cuenta que no todos los navegadores aceptan todos los códecs, codifica el vídeo en los formatos necesarios por tal que sea compatible con el máximo de navegadores posible. Explica las decisiones tomadas en la codificación y el porqué de cada una. Confirma con la herramienta MediaInfo que lo ha codificado a la velocidad que querías.
+        </p>
+        <video width="640" height="360" controls>
 		 <!-- Fuente del vídeo -->
         <source src="plataforma_20240529_012_firefox.mp4" type="video/mp4">
 		<!-- Mensaje de fallo para navegadores que no soportan HTML5 -->
         Tu navegador no soporta la etiqueta de video.
     </video>
-
+    </section>
 </body>
 </html>
 
