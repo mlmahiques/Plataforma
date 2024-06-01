@@ -205,19 +205,138 @@
      </section>
     <section>
         <h2>Tarea 2.6</h2>
-        <p> Calcula aproximadamente la compresión que el VLC de emisión está realizando al transcodificar el fichero almacenado a stream. 
-            Realiza una captura de pantalla del escritorio con los dos VLC en marcha y sus ventanas con las estadísticas de cada uno abiertas, e inserta la captura en el documento en el cual escribes las respuestas de esta práctica.</p>
-             
-        <ul>
-             <img src="estadisticas_emisor_receptor_2.png" alt="Información de los codecs de emisor y recpetor">
-       </ul>
-        <p>
-       <b> El calculo aproximado de la compresión seria </b>: (5109-2073)/5109=59%
-        </p>
-         <ul>
-            <li><p> <b> Latencia de la red: </b>  Yo entiendo que es por la latencia de la red entre el emisor y el receptor. En una red local (LAN), este retraso suele ser muy bajo (milisegundos), 
-                pero en una red más amplia (WAN) o con conexiones a Internet, puede aumentar considerablemente (segundos).</p></li>
-       </ul>
-     </section>
+        <p> Enfocando-nos en la transmisión en vivo de un stream de vídeo mediante un servicio de cloud CDN, éstos ofrecen múltiples modos de distribución, como por ejemplo streaming de baja latencia por entornos de mínimo retraso, streaming por OTT, etc... ¡incluso interactivo!</p>
+    <h2>Transmisión en Vivo de un Stream de Video Mediante Cloud CDN: Enfoque en Streaming por OTT (Over-the-Top)</h2>
+    <h2>Introducción</h2>
+    <p>
+        La transmisión de video en vivo a través de servicios de Cloud CDN ha revolucionado la manera en que el contenido multimedia llega a audiencias globales. El streaming por OTT, que se basa en la entrega directa de contenido a través de internet, ha sido adoptado por plataformas como Netflix, Hulu, y Amazon Prime Video. Este documento describe el proceso detallado para implementar un streaming por OTT, incluyendo las políticas de usuarios, roles de gestión, y un cálculo estimativo de costos para una transmisión HD en directo para 10,000 usuarios simultáneos.
+    </p>
+
+    <h2>Proceso de Streaming por OTT</h2>
+
+    <h3>1. Preparación y Configuración Inicial</h3>
+
+    <h4>a. Selección del Proveedor de Cloud CDN:</h4>
+    <ul>
+        <li>Elija un proveedor de Cloud CDN que ofrezca servicios robustos para streaming por OTT, como AWS CloudFront, Akamai, o Google Cloud CDN.</li>
+        <li>Configure una cuenta y obtenga las credenciales necesarias para acceder a los servicios del CDN.</li>
+    </ul>
+
+    <h4>b. Preparación del Contenido:</h4>
+    <ul>
+        <li>Asegúrese de que el contenido de video esté en un formato adecuado para la transmisión en línea, como H.264 para video y AAC para audio.</li>
+        <li>Utilice herramientas de codificación en vivo como AWS Elemental MediaLive, OBS Studio, o servicios similares ofrecidos por el proveedor de CDN.</li>
+    </ul>
+
+    <h3>2. Codificación y Emisión del Video</h3>
+
+    <h4>a. Configuración de la Codificación:</h4>
+    <ul>
+        <li>Configure el codificador para convertir la señal de video en un formato digital óptimo para la transmisión. Ajuste la tasa de bits y resolución para garantizar calidad HD (720p o 1080p).</li>
+        <li>Configure la codificación adaptativa (ABR - Adaptive Bitrate Streaming) para optimizar la entrega de contenido según las condiciones de red de los usuarios finales.</li>
+    </ul>
+
+    <h4>b. Emisión del Stream:</h4>
+    <ul>
+        <li>Establezca el punto de origen del stream utilizando la URL de emisión proporcionada por el CDN.</li>
+        <li>Inicie la emisión del video en vivo hacia el servidor de origen del CDN.</li>
+    </ul>
+
+    <h3>3. Configuración del CDN para Streaming por OTT</h3>
+
+    <h4>a. Servidor de Origen:</h4>
+    <ul>
+        <li>El servidor de origen del CDN recibe y procesa el stream de video en vivo.</li>
+        <li>Configure políticas de almacenamiento en caché para optimizar la entrega de segmentos de video.</li>
+    </ul>
+
+    <h4>b. Distribución del Contenido:</h4>
+    <ul>
+        <li>Configure la red de entrega de contenido (CDN) para distribuir el video desde nodos de borde cercanos a los usuarios finales.</li>
+        <li>Implemente protocolos de transmisión eficientes como HLS (HTTP Live Streaming) o DASH (Dynamic Adaptive Streaming over HTTP).</li>
+    </ul>
+
+    <h4>c. Políticas y Roles de Gestión:</h4>
+    <ul>
+        <li>Defina roles de gestión como administradores de red, ingenieros de transmisión y operadores de contenido.</li>
+        <li>Aplique políticas de acceso y control para asegurar que solo personal autorizado pueda gestionar el flujo de trabajo de transmisión.</li>
+    </ul>
+
+    <h3>4. Monitoreo y Optimización</h3>
+
+    <h4>a. Monitoreo en Tiempo Real:</h4>
+    <ul>
+        <li>Utilice herramientas de monitoreo para rastrear el rendimiento del stream, observando métricas como latencia, tasa de bits y calidad de experiencia del usuario.</li>
+        <li>Configure alertas para notificar a los operadores de cualquier problema en la transmisión.</li>
+    </ul>
+
+    <h4>b. Optimización Continua:</h4>
+    <ul>
+        <li>Ajuste la configuración de la codificación y las políticas de caché para mejorar la entrega del video.</li>
+        <li>Implemente técnicas de escalado automático para manejar picos de tráfico y asegurar una entrega continua y sin interrupciones.</li>
+    </ul>
+
+    <h2>Políticas Específicas y Roles</h2>
+
+    <h3>Políticas de Usuarios:</h3>
+    <ul>
+        <li>Implemente el control de acceso basado en roles (RBAC) para asegurar que solo usuarios autorizados puedan acceder a configuraciones críticas.</li>
+        <li>Aplique políticas de seguridad para proteger el contenido contra piratería y acceso no autorizado.</li>
+    </ul>
+
+    <h3>Gestión de Recursos:</h3>
+    <ul>
+        <li>Asigne ancho de banda y recursos de red en función de la demanda de los usuarios finales.</li>
+        <li>Utilice balanceo de carga para distribuir el tráfico equitativamente entre los nodos de borde.</li>
+    </ul>
+
+    <h3>Roles de Administración:</h3>
+    <ul>
+        <li><strong>Administrador de Red:</strong> Responsable de la configuración de la red de entrega y la optimización del rendimiento.</li>
+        <li><strong>Ingeniero de Transmisión:</strong> Encargado de la configuración del codificador y la supervisión de la calidad del stream.</li>
+        <li><strong>Operador de Contenido:</strong> Responsable de la gestión del contenido y la configuración del servidor de origen.</li>
+    </ul>
+
+    <h2>Cálculo Estimativo de Coste</h2>
+
+    <p>
+        Para calcular el coste estimativo de una transmisión en vivo de un stream HD para 10,000 usuarios simultáneos dentro de una misma región, consideramos los siguientes factores:
+    </p>
+
+    <h3>Suposiciones:</h3>
+    <ul>
+        <li>Resolución HD (720p) con una tasa de bits promedio de 3 Mbps.</li>
+        <li>Duración de la transmisión: 1 minuto.</li>
+    </ul>
+
+    <h3>Cálculo de Uso de Datos:</h3>
+    <ul>
+        <li>3 Mbps * 60 segundos = 180 Mbps por usuario.</li>
+        <li>180 Mbps / 8 = 22.5 MB por usuario por minuto.</li>
+        <li>22.5 MB * 10,000 usuarios = 225,000 MB o 225 GB por minuto.</li>
+    </ul>
+
+    <h3>Coste Estimado:</h3>
+    <ul>
+        <li>Supongamos que el coste de transferencia de datos en el CDN es $0.08 por GB.</li>
+        <li>225 GB * $0.08 = $18 por minuto.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <p>
+        El streaming por OTT es una solución efectiva para la distribución de contenido de video en vivo a una audiencia masiva a través de internet. El proceso implica la preparación y codificación del contenido, configuración del CDN para una entrega eficiente, y monitoreo constante para optimizar el rendimiento. Las políticas de usuarios y roles de administración aseguran la seguridad y eficiencia del servicio. El coste estimado para una transmisión en vivo de un stream HD para 10,000 usuarios simultáneos es aproximadamente $18 por minuto, dependiendo del proveedor y las tarifas específicas.
+    </p>
+
+    <h2>Referencias</h2>
+    <ol>
+        <li><a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">AWS CloudFront Documentation</a></li>
+        <li><a href="https://www.akamai.com/us/en/products/media-delivery/media-services-on-demand.jsp">Akamai OTT Solutions</a></li>
+        <li><a href="https://cloud.google.com/cdn/docs/overview">Google Cloud CDN Overview</a></li>
+        <li><a href="https://obsproject.com/wiki/">OBS Studio Documentation</a></li>
+        <li><a href="https://developer.apple.com/streaming/">HTTP Live Streaming (HLS) - Apple Developer</a></li>
+        <li><a href="https://mpeg.chiariglione.org/standards/mpeg-dash">Dynamic Adaptive Streaming over HTTP (DASH) - MPEG</a></li>
+    </ol>
+      
+</section>
 </body>
 </html>
